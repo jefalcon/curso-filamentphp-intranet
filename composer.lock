@@ -4,8 +4,87 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d06cf5f6e284742b7ceb6933570202c2",
+    "content-hash": "e920ed0345a5c8a7e4ac553973322c03",
     "packages": [
+        {
+            "name": "altwaireb/laravel-countries",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/altwaireb/laravel-countries.git",
+                "reference": "9524ba6c26a2527f56ec76dbce6ab398de5f6ff8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/altwaireb/laravel-countries/zipball/9524ba6c26a2527f56ec76dbce6ab398de5f6ff8",
+                "reference": "9524ba6c26a2527f56ec76dbce6ab398de5f6ff8",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^10.0||^11.0||^12.0",
+                "php": "^8.2",
+                "spatie/laravel-package-tools": "^1.16.4"
+            },
+            "require-dev": {
+                "larastan/larastan": "^2.9.2|^3.0",
+                "laravel/pint": "^1.14",
+                "nunomaduro/collision": "^6.0|^7.10|^8.9",
+                "orchestra/testbench": "^8.22.2|^9.0|^10.0",
+                "pestphp/pest": "^2.34.6|^3.7",
+                "pestphp/pest-plugin-arch": "^2.3|^3.0",
+                "pestphp/pest-plugin-laravel": "^2.3|^3.0",
+                "phpstan/extension-installer": "^1.3||^2.0",
+                "phpstan/phpstan-deprecation-rules": "1.1.4|^2.0",
+                "phpstan/phpstan-phpunit": "^1.3||^2.0",
+                "spatie/laravel-ray": "^1.35"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Countries": "Altwaireb\\Countries\\Facades\\Countries"
+                    },
+                    "providers": [
+                        "Altwaireb\\Countries\\CountriesServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Altwaireb\\Countries\\": "src/",
+                    "Altwaireb\\Countries\\Database\\Seeders\\": "database/seeders/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abdulmajeed Altwaireb",
+                    "email": "altwaireb@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel Countries , Countries States Cities DB Migration & Seeder",
+            "homepage": "https://github.com/altwaireb/laravel-countries",
+            "keywords": [
+                "Laravel-Countries",
+                "altwaireb",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/altwaireb/laravel-countries/issues",
+                "source": "https://github.com/altwaireb/laravel-countries/tree/1.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/Altwaireb",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-05-30T18:55:56+00:00"
+        },
         {
             "name": "anourvalar/eloquent-serialize",
             "version": "1.3.5",
@@ -4713,6 +4792,64 @@
                 }
             ],
             "time": "2025-02-25T09:09:36+00:00"
+        },
+        {
+            "name": "secondnetwork/blade-tabler-icons",
+            "version": "v3.36.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/secondnetwork/blade-tabler-icons.git",
+                "reference": "d04786e34b9e74820ad6a32290a17f9a59fefb6c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/secondnetwork/blade-tabler-icons/zipball/d04786e34b9e74820ad6a32290a17f9a59fefb6c",
+                "reference": "d04786e34b9e74820ad6a32290a17f9a59fefb6c",
+                "shasum": ""
+            },
+            "require": {
+                "blade-ui-kit/blade-icons": "^1.8",
+                "illuminate/support": "^9.0|^10.0|^11.0|^12.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0|^7.0|^9.0",
+                "phpunit/phpunit": "^9.0|^10.0|^11.0|^12.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "secondnetwork\\TablerIcons\\BladeTablerIconsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "secondnetwork\\TablerIcons\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andreas Farah"
+                }
+            ],
+            "description": "A package to easily make use of tabler-icons in your Laravel Blade views.",
+            "homepage": "https://github.com/secondnetwork/blade-tabler-icons",
+            "keywords": [
+                "blade",
+                "laravel",
+                "tabler-icons"
+            ],
+            "support": {
+                "issues": "https://github.com/secondnetwork/blade-tabler-icons/issues",
+                "source": "https://github.com/secondnetwork/blade-tabler-icons/tree/v3.36.1"
+            },
+            "time": "2026-01-05T15:11:00+00:00"
         },
         {
             "name": "spatie/color",

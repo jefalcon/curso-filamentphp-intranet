@@ -1,3 +1,5 @@
+//Capitulo 2
+
 composer create-project laravel/laravel curso-filamentphp-intranet
 
 // Para actualizar composer si es necesario:
@@ -28,3 +30,108 @@ DB_FOREIGN_KEYS=true
 composer require filament/filament:"^3.2" -W
 php artisan filament:install --panels
 php artisan make:filament-user 
+php artisan make:filament-resource User --generate
+
+//Capitulo 3
+Modifico DatabaseSeeder.php incluyendo:
+...
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+...
+public function run(): void
+    {
+        // User::factory(10)->create();
+
+        //User::factory()->create([
+        //    'name' => 'Test User',
+        //    'email' => 'test@example.com',
+        //]);
+
+        DB::table('users')->insert([
+            'name' => 'Administrador',
+            'email' => 'admin@admin.com',
+            'password' => Hash::make('123456'),
+        ]);
+    }
+
+//Instalamos altwaireb
+Información sobre paises, capitales, etc...
+
+composer require altwaireb/laravel-countries
+php artisan countries:install
+php artisan migrate
+
+public function run(): void
+    {
+    
+        $this->call(CountriesTableSeeder::class);
+        ...
+    }
+Or you can Seed Data of Countries States Cities, by run this command.
+
+php artisan countries:seeder
+And you can refresh to re-seeding Data of Countries States Cities, by run this command.
+
+php artisan countries:seeder --refresh
+
+php artisan make:filament-resource Country --generate
+
+php artisan make:migration add-adress-fields-to-user-table
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        //
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreignId('country_id')->nullable()->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('state_id')->nullable()->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('city_id')->nullable()->constrained()->onUpdate('cascade')->onDelete('cascade'); 
+            $table->string('address')->nullable(); 
+            $table->string('postal_code')->nullable();                                                                                                   
+        });
+    }
+
+php artisan migrate
+
+Ahora dentro de UserResource.php
+
+// Rediseñamos el form de userresource
+
+use Filament\Forms\Components\Section;
+public static function form(Form $form): Form
+    {
+        return $form
+            ->schema([
+                
+                Section::make('Personal Information')
+                ->schema([
+                    Forms\Components\TextInput::make('name')
+                        ->required(),
+                    Forms\Components\TextInput::make('email')
+                        ->email()
+                        ->required(),
+                    Forms\Components\TextInput::make('password')
+                        ->password()
+                        ->required(),
+                        ]),
+            ]);
+    }
+
+    // Capitulo 3
+
+    php artisan make:model Calendar -m
+    php artisan make:model Departament -m
+    php artisan make:model Timesheet -m
+    php artisan make:model Holiday -m
+    php artisan make:migration create_table_user_calendar
+    php artisan make:migration create_table_user_departament
+
+    php artisan migrate
+
+    //Se trabaja sobre contenido de las migraiones y modelos asociados especialmente definmiendo las relaciones entre las tablas
+
+    
